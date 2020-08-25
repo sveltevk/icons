@@ -4,11 +4,17 @@ node_js:
 scripts:
   - npm run build
 
-deploy:
-  provider: pages
-  local-dir: public
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-  keep-history: true
-  on:
-    branch: master
+deploy: 
+  - provider: npm
+    email: severecloud@gmail.com
+    api_key: $NPM_TOKEN
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: pages
+    local-dir: public
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    keep-history: true
+    on:
+      branch: master
