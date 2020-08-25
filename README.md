@@ -1,4 +1,6 @@
 # VK Icons
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsveltevk%2Ficons.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsveltevk%2Ficons?ref=badge_shield)
+
 
 SVG icons, provided as a Svelte components.
 
@@ -32,3 +34,7 @@ or base import:
 ```
 
 Note: Even if using the base import method, a modern application bundler like Rollup or webpack should [treeshake](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) unused imports.
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsveltevk%2Ficons.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsveltevk%2Ficons?ref=badge_large)
