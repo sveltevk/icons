@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const SVGO = require('svgo');
-const { iconsMap, toPascalCase } = require('./utils/icons');
+const { iconsMap } = require('./utils/icons');
+const { toPascalCase } = require('./utils/naming');
 const symbol = require('./utils/symbol');
 
 console.log('generating icons...');
@@ -17,6 +18,11 @@ const svgPath = 'node_modules/@vkontakte/icons/src/svg'
 const icons = iconsMap(path.join(cwd, svgPath, '**/*.svg'));
 
 let libExport = "";
+let docImport = "";
+/**
+ * @type {Object.<string, {id:string, component:string}[]>}
+ */
+const docIcons = {};
 
 // Готовим директорию
 fs.rmdirSync(path.join(cwd, BUILD_FOLDER), { recursive: true });
@@ -55,7 +61,18 @@ const promises = icons.map(({ id, size }) => {
     fs.writeFileSync(path.join(iconDir, `${svelteName}.svelte`), result);
 
     // для экспорта и декларации
-    libExport += `export { default as ${className} } from './${absolutePath}';\n`
+    libExport += `export { default as ${className} } from './${absolutePath}';\n`;
+
+    docImport += `import ${className} from "../dist/${absolutePath}";\n`
+    const docIcon = {
+      id: id,
+      component: className,
+    }
+    if (typeof docIcons[size] !== "undefined") {
+      docIcons[size].push(docIcon);
+    } else {
+      docIcons[size] = [docIcon]
+    }
   });
 });
 
@@ -63,6 +80,20 @@ Promise.all(promises).then(() => {
   // пишем экспорты и декларацию
   fs.writeFileSync(path.join(cwd, BUILD_FOLDER, `index.js`), libExport)
   fs.writeFileSync(path.join(cwd, BUILD_FOLDER, `index.d.ts`), libExport)
+
+  // пишем документацию
+  docImport += "\nconst icons = [\n"
+  for (const [size, icons] of Object.entries(docIcons)) {
+    docImport += `{\nsize: ${size},\n`
+    docImport += `icons: [\n`
+    icons.forEach(icon=>{
+      docImport += `{id: "${icon.id}",component: ${icon.component},},\n`
+    })
+    docImport += `]\n`
+    docImport += `},\n`
+  }
+  docImport += "]\n\nexport default icons;\n"
+  fs.writeFileSync(path.join(cwd, 'doc', `icons.js`), docImport)
 
   console.log(`icons successfully generated in ${BUILD_FOLDER}!`);
 });

@@ -1,9 +1,13 @@
 # VK Icons
 
-SVG icons, provided as a Svelte components.
+[![NPM][npm]][npm-url]
+[![Build][build]][build-badge]
+[![VK chat][chat]][chat-url]
 
-- [github.com/VKCOM/icons](https://github.com/VKCOM/icons)
-- [npm](https://www.npmjs.com/package/@sveltevk/icons)
+[SVG icons](https://github.com/VKCOM/icons)
+, provided as a Svelte components.
+
+## [Icon Preview](https://sveltevk.github.io/icons/)
 
 ## Setup
 
@@ -32,3 +36,16 @@ or base import:
 ```
 
 Note: Even if using the base import method, a modern application bundler like Rollup or webpack should [treeshake](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) unused imports.
+
+## License
+
+[![MIT][fossa]][fossa-url]
+
+[npm]: https://img.shields.io/npm/v/@sveltevk/icons.svg?color=blue
+[npm-url]: https://npmjs.com/package/@sveltevk/icons
+[build]: https://travis-ci.com/sveltevk/icons.svg?branch=master
+[build-badge]: https://travis-ci.com/sveltevk/icons
+[chat]: https://img.shields.io/badge/VK%20chat-%234a76a8.svg?logo=VK&logoColor=white
+[chat-url]: https://vk.me/join/AJQ1d6Or8Q00Y_CSOESfbqGt
+[fossa]: https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsveltevk%2Ficons.svg?type=large
+[fossa-url]: https://app.fossa.com/projects/git%2Bgithub.com%2Fsveltevk%2Ficons?ref=badge_large
