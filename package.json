@@ -1,12 +1,13 @@
 {
   "name": "@sveltevk/icons",
-  "version": "0.37.0",
+  "version": "0.37.1",
   "license": "MIT",
   "description": "SVG icons, provided as a Svelte components.",
   "author": "Daniil Suvorov (https://github.com/SevereCloud)",
   "svelte": "./dist/index.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "sideEffects": ["./dist/sprite.js"],
   "scripts": {
     "build": "npm run icons-build && npm run  doc-build",
     "icons-build": "node src",

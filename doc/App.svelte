@@ -64,7 +64,7 @@
     Note: Even if using the base import method, a modern application bundler
     like Rollup or webpack should
     <a href="https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking">
-      treeshake
+      tree shake
     </a>
     unused imports.
   </p>

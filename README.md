@@ -35,7 +35,9 @@ or base import:
 <Icon24LogoVk width={20} height={20} color="#4bb34b" />
 ```
 
-Note: Even if using the base import method, a modern application bundler like Rollup or webpack should [treeshake](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) unused imports.
+Note: Even if using the base import method, a modern application bundler like Rollup or webpack should [tree shake](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking) unused imports.
+
+## Tree shake
 
 ## License
 
