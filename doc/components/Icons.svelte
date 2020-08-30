@@ -2,7 +2,7 @@
   import Search from "./Search.svelte";
   import Icon from "./Icon.svelte";
   import Copied from "./Copied.svelte";
-  import icons from "./icons.js"; // Need build icons!
+  import icons from "../icons.js"; // Need build icons!
 
   let hash = location.hash;
   let search = "";
