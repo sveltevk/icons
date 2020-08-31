@@ -9,10 +9,10 @@ export default class Icon {
      */
     fill?: string;
 
-    /** @type {string} [width={28}] */
+    /** @type {number} [width={28}] */
     width?: number;
 
-    /** @type {string} [height={28}] */
+    /** @type {number} [height={28}] */
     height?: number;
   };
 }
