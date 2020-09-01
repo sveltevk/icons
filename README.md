@@ -2,8 +2,9 @@
 
 SVG icons, provided as a Svelte components.
 
-- [GitHub](https://github.com/sveltevk/icons)
+- [GitHub][github-url]
 - [npm][npm-url]
+- [Changelog][changelog-url]
 
 Based on [VKCOM/icons](https://github.com/VKCOM/icons)
 
@@ -44,3 +45,5 @@ Note: Even if using the base import method, a modern application bundler like Ro
 [license]: https://img.shields.io/github/license/sveltevk/icons
 [license-url]: https://github.com/sveltevk/icons/blob/master/LICENSE
 [site-url]: https://sveltevk.github.io/icons/
+[changelog-url]: https://github.com/sveltevk/icons/releases
+[github-url]: https://github.com/sveltevk/icons
