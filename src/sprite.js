@@ -1,4 +1,5 @@
-import BrowserSprite from 'svg-baker-runtime/src/browser-sprite';
+import BrowserSprite from 'svg-baker-runtime/browser-sprite';
+import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
 
 const canUseDOM = !!(
   typeof window !== 'undefined' &&
@@ -9,16 +10,31 @@ const canUseDOM = !!(
 let browserSprite;
 
 if (canUseDOM) {
-  browserSprite = new BrowserSprite({ attrs: { id: '__SVG_SPRITE_NODE__' } });
-  if (document.querySelector('body')) {
-    browserSprite.mount();
-  } else {
-    document.addEventListener('DOMContentLoaded', () => {
+  const spriteId = '__SVG_SPRITE_NODE__';
+
+  browserSprite = new BrowserSprite({ attrs: { id: spriteId } });
+
+  const mount = () => {
+    const spriteNode = document.getElementById(spriteId);
+    if (spriteNode) {
+      browserSprite.attach(spriteNode);
+    } else {
       browserSprite.mount();
-    });
+    }
+  };
+
+  if (document.querySelector('body')) {
+    mount();
+  } else {
+    document.addEventListener('DOMContentLoaded', mount);
   }
 } else {
   browserSprite = null;
 }
 
-export default browserSprite;
+export function addSpriteSymbol (symbol) {
+  if (browserSprite) {
+    browserSprite.add(new BrowserSymbol(symbol));
+  }
+}
+

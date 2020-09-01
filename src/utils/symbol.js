@@ -7,18 +7,13 @@ const reactify = (symbol) => {
   const height = symbol.viewBox.split(' ')[3];
 
   return `<script context="module">
-  import BrowserSymbol from 'svg-baker-runtime/browser-symbol';
-  import browserSprite from '../../sprite';
+  import {addSpriteSymbol} from '../../sprite';
 
-  if (browserSprite) {
-    const browserSymbol = new BrowserSymbol({
-      id: '${symbol.id}',
-      viewBox: '${symbol.viewBox}',
-      content: '${symbol.render()}'
-    });
-  
-    browserSprite.add(browserSymbol);
-  }
+  addSpriteSymbol({
+    id: '${symbol.id}',
+    viewBox: '${symbol.viewBox}',
+    content: '${symbol.render()}'
+  });
 </script>
 
 <script>
