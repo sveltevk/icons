@@ -1,13 +1,4 @@
-<script>
-  import { createEventDispatcher } from "svelte";
-
-  export let size;
-  export let id;
-  export let component;
-  export let hash;
-
-  const href = `#${size}/${id}`;
-
+<script context="module">
   const toPascalCase = (s) => {
     return s
       .match(/[a-z0-9]+/gi)
@@ -16,12 +7,29 @@
       })
       .join("");
   };
+</script>
 
+<script>
+  import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
+
+  export let size;
+  export let id;
+  export let component;
+  export let hash;
+  export let copyOnlyName = false;
+
+  const href = `#${size}/${id}`;
+  const name = `Icon${size}${toPascalCase(id)}`;
+
   const copy = () => {
-    const text = `import Icon${size}${toPascalCase(
-      id
-    )} from '@sveltevk/icons/dist/${size}/${id}';`;
+    let text = "";
+    if (copyOnlyName) {
+      text = name;
+    } else {
+      text = `import ${name} from '@sveltevk/icons/dist/${size}/${id}';`;
+    }
+
     navigator.clipboard.writeText(text).then(() => {
       dispatch("click");
     });

@@ -5,13 +5,14 @@
   import icons from "../icons.js"; // Need build icons!
 
   let hash = location.hash;
+  let copyOnlyName = false;
   let search = "";
 
   let visableCopied;
-  const clickIcon = ()=>{
-    visableCopied = true
-    setTimeout(()=>visableCopied = false, 1250);
-  }
+  const clickIcon = () => {
+    visableCopied = true;
+    setTimeout(() => (visableCopied = false), 1250);
+  };
 </script>
 
 <style>
@@ -29,21 +30,26 @@
   <Search bind:value={search} />
 </h2>
 
+<label>
+  <input type="checkbox" bind:checked={copyOnlyName} /> Copy component name only
+</label>
+
 {#each icons as group}
   <div class="size">
     <h3>{group.size}</h3>
     <div class="icons">
       {#each group.icons as icon}
-        {#if icon.id.toLowerCase().indexOf(search) > -1}
+        {#if icon.id.toLowerCase().indexOf(search.toLowerCase()) > -1}
           <Icon
             id={icon.id}
             size={group.size}
+            {copyOnlyName}
             component={icon.component}
-            {hash} 
-            on:click={clickIcon}/>
+            {hash}
+            on:click={clickIcon} />
         {/if}
       {/each}
     </div>
   </div>
 {/each}
-<Copied bind:visable={visableCopied}/>
+<Copied bind:visable={visableCopied} />
