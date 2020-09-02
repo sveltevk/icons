@@ -18,12 +18,13 @@ const reactify = (symbol) => {
 
 <script>
   import IconBase from "../../IconBase.svelte";
+  import { current_component } from "svelte/internal";
 
   export let width = ${width};
   export let height = ${height};
 </script>
 
-<IconBase {...$$restProps} id="${symbol.id}" viewBox="${symbol.viewBox}" {width} {height}/>
+<IconBase curComponent={current_component} {...$$restProps} id="${symbol.id}" viewBox="${symbol.viewBox}" {width} {height}/>
 `;
 };
 

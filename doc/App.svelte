@@ -1,6 +1,6 @@
 <script>
   import Icons from "./components/Icons.svelte";
-  import Doc from "../README.md"
+  import Doc from "../README.md";
 </script>
 
 <style>

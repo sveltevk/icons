@@ -37,4 +37,3 @@ export function addSpriteSymbol (symbol) {
     browserSprite.add(new BrowserSymbol(symbol));
   }
 }
-
