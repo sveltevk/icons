@@ -39,15 +39,14 @@
     <h3>{group.size}</h3>
     <div class="icons">
       {#each group.icons as icon}
-        {#if icon.id.toLowerCase().indexOf(search.toLowerCase()) > -1}
-          <Icon
-            id={icon.id}
-            size={group.size}
-            {copyOnlyName}
-            component={icon.component}
-            {hash}
-            on:click={clickIcon} />
-        {/if}
+        <Icon
+          id={icon.id}
+          size={group.size}
+          component={icon.component}
+          {copyOnlyName}
+          visable={icon.id.toLowerCase().indexOf(search.toLowerCase()) > -1}
+          {hash}
+          on:click={clickIcon} />
       {/each}
     </div>
   </div>

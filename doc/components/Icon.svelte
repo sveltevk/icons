@@ -18,6 +18,7 @@
   export let component;
   export let hash;
   export let copyOnlyName = false;
+  export let visable = true;
 
   const href = `#${size}/${id}`;
   const name = `Icon${size}${toPascalCase(id)}`;
@@ -81,14 +82,18 @@
   .icon:hover .icon-name {
     visibility: visible;
   }
+  .icon:not(.visable) {
+    display: none;
+  }
 </style>
 
 <a
   class="icon"
   class:anchor={hash === href}
+  class:visable
   {href}
   on:click={copy}
-  style={`width: ${size}px; height: ${size}px`}>
+  style={`width: ${size}px; height: ${size}px;`}>
   <svelte:component this={component} />
   <div class="icon-name">{id}</div>
 </a>
