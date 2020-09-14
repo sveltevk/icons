@@ -1,6 +1,6 @@
 {
   "name": "@sveltevk/icons",
-  "version": "1.40.0",
+  "version": "1.41.0",
   "license": "MIT",
   "description": "SVG icons, provided as a Svelte components.",
   "author": "Daniil Suvorov (https://github.com/SevereCloud)",
@@ -20,7 +20,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^15.0.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@vkontakte/icons": "1.40.0",
+    "@vkontakte/icons": "^1.41.0",
     "glob": "^7.1.6",
     "mdsvex": "^0.8.6",
     "prism-svelte": "^0.4.7",
