@@ -1,4 +1,6 @@
 const https = require('https');
+const { exit } = require('process');
+const { execSync } = require('child_process');
 
 const { toPascalCase } = require('./src/utils/naming');
 
@@ -10,8 +12,8 @@ const options = {
   }
 };
 
-// const sha = `git rev-list --tags --max-count=1`
-// const nowVersion = `git describe --tags ${sha} --always`
+const sha = execSync(`git rev-list --tags --max-count=1`).toString().trimEnd()
+const nowVersion = execSync(`git describe --tags ${sha} --always`).toString().trimEnd()
 
 // Получаем тэги
 const getTags = () => {
@@ -25,8 +27,27 @@ const getTags = () => {
     res.on('end', function () {
       const data = JSON.parse(body);
 
-      const newVersion = data[0].name
-      const prevVersion = data[1].name
+      let index = 0
+      for (let i = 0; i < data.length; i++) {
+        const version = data[i].name;
+        if (nowVersion === version) {
+          index = i
+        }
+      }
+
+      if (index === 0) {
+        console.error("latest version");
+        exit(1)
+      }
+
+      const newVersion = data[index-1].name
+      const prevVersion = data[index].name
+
+      execSync(`yarn add @vkontakte/icons@${newVersion} -D`)
+      execSync(`git add -A`)
+      execSync(`yarn version --new-version ${newVersion.substring(1)}`)
+      // TODO: `git push --follow-tags`
+
       getCompare(prevVersion, newVersion)
 
       console.log(`${prevVersion}...${newVersion}`)
@@ -102,9 +123,5 @@ const changelog = (data) => {
     console.info(update.join('\n\n'))
   }
 }
-
-// TODO: `yarn add @vkontakte/icons@${newVersion} -D`
-// TODO: `git add -A`
-// TODO: `yarn version --new-version ${newVersion}`
 
 getTags()
