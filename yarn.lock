@@ -94,10 +94,10 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
 
-"@vkontakte/icons@1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@vkontakte/icons/-/icons-1.57.0.tgz#259de35ebd9da89cc03d17945c6ff9ca0f5e120b"
-  integrity sha512-tsq8Vj7Xh8/F4e9exSJnPjsj3HTLH/Nt/wD9X1FzDjiHRGzFdvtpOzPXkz4MS5kHEAkRfjvO5vptuw1pBbHkSQ==
+"@vkontakte/icons@1.58.0":
+  version "1.58.0"
+  resolved "https://registry.yarnpkg.com/@vkontakte/icons/-/icons-1.58.0.tgz#d46cef7dc04147e3578f8d691f4aa45ea0c610c9"
+  integrity sha512-7v6+U5aR2323TNjEHhD18wMCG91fxigkCs7WA6C3sfA3WbZO2oYFnXZBAMSzp/FyhdibLvSizCmLVuC0aBy4jw==
   dependencies:
     es6-object-assign "1.1.0"
     svg-baker-runtime "1.4.6"
