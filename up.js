@@ -4,6 +4,18 @@ const { execSync } = require('child_process');
 
 const { toPascalCase } = require('./src/utils/naming');
 
+const gh = (endpoint, fields) => {
+  let flags = ''
+  for (const key in fields) {
+    if (fields.hasOwnProperty(key)) {
+      const value = fields[key];
+      flags += `-F='${key}=${value}' `
+    }
+  }
+
+  return execSync(`gh api ${endpoint} ${flags}`)
+}
+
 const apiURL = 'https://api.github.com/repos/VKCOM/icons';
 
 const options = {
@@ -40,7 +52,7 @@ const getTags = () => {
         exit(1)
       }
 
-      const newVersion = data[index-1].name
+      const newVersion = data[index - 1].name
       const prevVersion = data[index].name
 
       execSync(`yarn add @vkontakte/icons@${newVersion} -D`)
@@ -70,7 +82,7 @@ const getCompare = (prevVersion, newVersion) => {
 
     res.on('end', function () {
       const data = JSON.parse(body);
-      changelog(data)
+      changelog(data, newVersion)
     });
   }).on("error", (err) => {
     console.debug(err)
@@ -81,7 +93,7 @@ const getCompare = (prevVersion, newVersion) => {
 
 
 
-const changelog = (data) => {
+const changelog = (data, newVersion) => {
   const add = []
   const update = []
   data.files.forEach(file => {
@@ -113,15 +125,23 @@ const changelog = (data) => {
     }
   });
 
-  if (add.length > 0)  {
-    console.info('## Add\n')
-    console.info(add.join('\n\n'))
+  let body = ""
+  if (add.length > 0) {
+    body += '## Add\n'
+    body += add.join('\n\n')
   }
 
-  if (update.length > 0)  {
-    console.info('\n## Update\n')
-    console.info(update.join('\n\n'))
+  if (update.length > 0) {
+    body += '\n## Update\n'
+    body += update.join('\n\n')
   }
+
+  gh("repos/sveltevk/icons/releases", {
+    tag_name: newVersion,
+    name: newVersion,
+    body: body,
+    draft: true,
+  })
 }
 
 getTags()
