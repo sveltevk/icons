@@ -94,13 +94,13 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
 
-"@vkontakte/icons@1.63.0":
-  version "1.63.0"
-  resolved "https://registry.yarnpkg.com/@vkontakte/icons/-/icons-1.63.0.tgz#140e479348f331d4a65432f321815a95050b7ea5"
-  integrity sha512-+Kgnn+F27rzN3FCCLIR2H6lp6tc5+uaxWQkCfqWyA15W4mISAR4CaceI4vQrjfmHXCX9E9jsLk56tT8dk0/BoA==
+"@vkontakte/icons@1.96.0":
+  version "1.96.0"
+  resolved "https://registry.yarnpkg.com/@vkontakte/icons/-/icons-1.96.0.tgz#029205fe6971adfa600e5fcd6e31005a830a4974"
+  integrity sha512-rTDbGeXuh4NmsynhNm5Dykdo30OC+qRwezdlIl310RaR9koL3x+vNAmAs6Bb6bwRv+wIK0a4n3uO7gSXKhRYCA==
   dependencies:
     es6-object-assign "1.1.0"
-    svg-baker-runtime "1.4.6"
+    svg-baker-runtime "1.4.7"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -1743,16 +1743,7 @@ svelte@^3.24.1:
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.24.1.tgz#aca364937dd1df27fe131e2a4c234acb6061db4b"
   integrity sha512-OX/IBVUJSFo1rnznXdwf9rv6LReJ3qQ0PwRjj76vfUWyTfbHbR9OXqJBnUrpjyis2dwYcbT2Zm1DFjOOF1ZbbQ==
 
-svg-baker-runtime@1.4.6:
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/svg-baker-runtime/-/svg-baker-runtime-1.4.6.tgz#73499736c636610121a9e17ae6ceb2ea1023ec6b"
-  integrity sha512-n+Uq23mafI12WLHXahkjSY00qHJaNfeB9XgVKdo0C4kzrcn8JnunXNajvOlqkFaTqj7xT7MwTlFl3Hga8AevcQ==
-  dependencies:
-    deepmerge "1.3.2"
-    mitt "1.1.2"
-    svg-baker "^1.7.0"
-
-svg-baker-runtime@^1.4.7:
+svg-baker-runtime@1.4.7, svg-baker-runtime@^1.4.7:
   version "1.4.7"
   resolved "https://registry.yarnpkg.com/svg-baker-runtime/-/svg-baker-runtime-1.4.7.tgz#f4720637f5b6202eef6378d81f1fead0815f8a4e"
   integrity sha512-Zorfwwj5+lWjk/oxwSMsRdS2sPQQdTmmsvaSpzU+i9ZWi3zugHLt6VckWfnswphQP0LmOel3nggpF5nETbt6xw==
