@@ -43,8 +43,8 @@
 </script>
 
 <div
-  {...$$restProps}
   role="presentation"
+  {...$$restProps}
   class={`Icon Icon--${size} Icon--w-${width} Icon--h-${height} Icon--${id} ${className}`}
   use:events>
   <svg {viewBox} {width} {height} style="display:block">
