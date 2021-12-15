@@ -1,6 +1,6 @@
 {
   "name": "@sveltevk/icons",
-  "version": "1.138.0",
+  "version": "1.138.1",
   "license": "MIT",
   "description": "SVG icons, provided as a Svelte components.",
   "author": "Daniil Suvorov (https://github.com/SevereCloud)",
@@ -44,7 +44,7 @@
     "type": "git",
     "url": "https://github.com/sveltevk/icons.git"
   },
-  "homepage": "https://github.com/sveltevk/icons",
+  "homepage": "https://sveltevk.github.io/icons/",
   "bugs": "https://github.com/sveltevk/icons/issues",
   "keywords": [
     "vk",
