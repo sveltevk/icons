@@ -25,7 +25,9 @@ let docImport = "";
 const docIcons = {};
 
 // Готовим директорию
-fs.rmdirSync(path.join(cwd, BUILD_FOLDER), { recursive: true });
+if (fs.existsSync(path.join(cwd, BUILD_FOLDER))) {
+  fs.rmdirSync(path.join(cwd, BUILD_FOLDER), { recursive: true });
+}
 fs.mkdirSync(path.join(cwd, BUILD_FOLDER));
 
 // Копируем общие файлы
