@@ -1,8 +1,8 @@
 name: Publish Package and Deploy Site
 on:
   push:
-    tags:
-      - v*
+    branches:
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
