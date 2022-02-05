@@ -16,6 +16,8 @@ npm i @sveltevk/icons
 
 ## Example
 
+[![REPL][repl]](https://svelte.dev/repl/363b61d1a57548ae861d6a5ec184308f)
+
 ```svelte
 <script>
   import Icon24Cancel from '@sveltevk/icons/dist/24/cancel';
@@ -47,3 +49,4 @@ Note: Even if using the base import method, a modern application bundler like Ro
 [site-url]: https://sveltevk.github.io/icons/
 [changelog-url]: https://github.com/sveltevk/icons/releases
 [github-url]: https://github.com/sveltevk/icons
+[repl]: https://img.shields.io/badge/svelte-REPL-red?logoColor=white&style=flat-square
