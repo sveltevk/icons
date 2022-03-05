@@ -1,8 +1,12 @@
-/node_modules/
-/dist/
-/public/build/
-/doc/icons.js
-
 .DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+*.log
 
-package-lock.json
+/src/lib/*
+src/site/data/icons.ts

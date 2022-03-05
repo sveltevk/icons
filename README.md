@@ -20,7 +20,7 @@ npm i @sveltevk/icons
 
 ```svelte
 <script>
-  import Icon24Cancel from '@sveltevk/icons/dist/24/cancel';
+	import Icon24Cancel from '@sveltevk/icons/dist/24/cancel';
 </script>
 
 <Icon24Cancel />
@@ -30,7 +30,7 @@ or base import:
 
 ```svelte
 <script>
-  import { Icon24LogoVk } from '@sveltevk/icons';
+	import { Icon24LogoVk } from '@sveltevk/icons';
 </script>
 
 <Icon24LogoVk width={20} height={20} color="#4bb34b" />
