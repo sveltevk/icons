@@ -1,8 +1,9 @@
 const https = require('https');
 const { exit } = require('process');
 const { execSync } = require('child_process');
+const fs = require('fs');
 
-const { toPascalCase } = require('./utils/naming');
+const { toPascalCase } = require('./utils/naming.cjs');
 
 const gh = (endpoint, fields) => {
 	let flags = '';
@@ -24,8 +25,7 @@ const options = {
 	}
 };
 
-const sha = execSync(`git rev-list --tags --max-count=1`).toString().trimEnd();
-const nowVersion = execSync(`git describe --tags ${sha} --always`).toString().trimEnd();
+const nowVersion = 'v' + JSON.parse(fs.readFileSync('package.json')).devDependencies['@vkontakte/icons']
 
 // Получаем тэги
 const getTags = () => {
