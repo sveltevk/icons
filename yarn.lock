@@ -290,10 +290,10 @@
     "@typescript-eslint/types" "5.13.0"
     eslint-visitor-keys "^3.0.0"
 
-"@vkontakte/icons@1.146.0":
-  version "1.146.0"
-  resolved "https://registry.yarnpkg.com/@vkontakte/icons/-/icons-1.146.0.tgz#abefb08d973b883eaeff571ef272853e46f5f48a"
-  integrity sha512-0kP4CrcwM+JpnFSbqKqYGlZ9OSHhnnOzScEUyd6+L+9q5gRvKwAMh6RqKhlQocBkjzkIuX1hcykXp9qAlWPbAw==
+"@vkontakte/icons@1.147.0":
+  version "1.147.0"
+  resolved "https://registry.yarnpkg.com/@vkontakte/icons/-/icons-1.147.0.tgz#3498719dedb82182fc4f1a7691af1c9be3d0bc9f"
+  integrity sha512-+VKsAtW1OOzNxRTOTI5273SiAZca+FKkyxCcexCUNjLMaf81BNpFWAY6rhQoJ8snZU56rYjbg8vyqZj9kIK/ZA==
   dependencies:
     es6-object-assign "1.1.0"
     svg-baker-runtime "1.4.7"
